@@ -7,8 +7,7 @@ class DockingStation
   end
 
   def release_bike
-    Bike.new
-    # (Bike.new.working?) ? (release) : (puts 'Bike not working')
+    (@bikes.empty? ) ? (raise 'No bikes available to release' ) : (@bikes)
   end
 
   def dock(velo)
@@ -18,5 +17,4 @@ class DockingStation
   def dock_empty?
     @bikes.empty?
   end
-
 end

@@ -25,5 +25,18 @@ describe DockingStation do
     expect(@docking_station.dock_empty?).to eq false
   end
 
+  it 'raise error when docking_station is empty' do
+    @bikes = []
+    expect {@docking_station.release_bike}.to raise_error 'No bikes available to release'
+  end
+
+  # docking station
+  # not charging bikes unnecessarily
+  # not release bikes if no bikes -> raise error
+
 end
 
+
+# givn
+# when
+# then

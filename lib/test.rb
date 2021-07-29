@@ -1,3 +1,3 @@
 bike = []
 
-p bike.empty?
+p bike.empty?cd 
