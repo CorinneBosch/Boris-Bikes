@@ -1,0 +1,3 @@
+bike = []
+
+p bike.empty?
