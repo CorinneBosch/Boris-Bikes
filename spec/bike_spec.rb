@@ -1,5 +1,5 @@
-require 'docking_station.rb'
+require 'bike.rb'
 
 describe Bike do
-  it { expect(Bike.new.working?).to eq (true) }
+  it { expect(Bike.new.working?).to eq true}
 end
