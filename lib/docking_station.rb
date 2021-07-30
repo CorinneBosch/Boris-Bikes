@@ -19,15 +19,13 @@ class DockingStation
       @station.pop
     else (@station[length-1]).broken?
       raise 'Bike is broken, try another one!'
-      # puts 'brokennn'
     end
   end
 
   def dock(velo) # takes an instance of a Bike object
-    # (dock_full?) ? (raise 'Docking station reached full capacety') : (@station << velo)
     raise 'Docking station reached full capacety' if dock_full?
     @station << velo
-    (velo.working?) ? (return 'Bike is docked') : (raise 'Bike is broken')
+    (velo.working?) ? (return 'Bike is docked') : (return 'Bike is broken')
   end 
 
   private

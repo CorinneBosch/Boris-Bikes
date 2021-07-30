@@ -43,23 +43,22 @@ describe DockingStation do
   
   it 'test if Bike is broken or working' do
     expect(@bike.working?).to eq true
-    bike1 = Bike.new('broken')
-    expect(bike1.broken?).to eq 'broken'
+    velo = Bike.new('broken')
+    expect(velo.broken?).to eq 'broken'
   end
   
   it 'does not release Bike when broken & raise error' do 
-    # mayfair = DockingStation.new
-    # mayfair.dock(Bike.new('broken'))
     @docking_station.station = [Bike.new('broken')]
-    # puts mayfair
     expect {@docking_station.release_bike}.to raise_error 'Bike is broken, try another one!'
   end
 
-  # it 'raise error when dock broken Bike' do 
-  #   expect {@docking_station.dock(Bike.new('broken'))}.to raise_error 'Bike is broken'
-  # end
-
+  it 'docks broken & functioning bikes' do
+    @docking_station.dock(Bike.new('broken'))
+    @docking_station.dock(Bike.new('functioning'))
+    expect(@docking_station.station.length).to eq 2
+  end
 end
+
 
 
 # given
