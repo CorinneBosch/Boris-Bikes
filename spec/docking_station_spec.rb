@@ -4,7 +4,7 @@ describe DockingStation do
 
   before(:each) do
     @docking_station = DockingStation.new
-    @bikes = Bike.new
+    @bike = Bike.new # Why are you calling this single Bike object @bikes with an s?
   end
 
   it 'respond to release_bike' do
@@ -12,7 +12,7 @@ describe DockingStation do
   end
 
   it "get a bike & check if it is working?" do
-    expect(@bikes.working?).to eq true
+    expect(@bike.working?).to eq true
   end
 
   it 'responds to dock' do
@@ -26,17 +26,27 @@ describe DockingStation do
   end
 
   it 'raise error when docking_station is empty' do
-    @bikes = []
+    # @bike = []
+    @docking_station.bikes = []
     expect {@docking_station.release_bike}.to raise_error 'No bikes available to release'
   end
 
-  # docking station
-  # not charging bikes unnecessarily
-  # not release bikes if no bikes -> raise error
+  it 'raise error when docking_station is full' do
+  
+    @docking_station.bikes = [Bike.new, Bike.new]
+    # @docking_station.dock Bike.new
+    # expect {@docking_station.dock_full?}.to raise_error 'Docking station reached full capacety'
+    # expect(@docking_station.dock_full?).to eq false 
+    expect {@docking_station.dock(@bike)}.to raise_error 'Docking station reached full capacety'
+  end
+
+  # docking station maintainer
+  # distributing bikes
+  # not accept bikes when full
 
 end
 
 
-# givn
+# given
 # when
 # then
