@@ -1,3 +1,5 @@
+require "./lib/Bike"
+
 class DockingStation
 
   attr_accessor :station, :capacity
@@ -10,7 +12,14 @@ class DockingStation
   end
 
   def release_bike
-    (dock_empty?) ? (raise 'No bikes available to release') : (@station.pop())
+    # raise 'No bikes available to release' if  dock_empty?
+    length = @station.count
+    if (@station[length-1]).working? == true
+      @station.pop
+    else (@station[length-1]).broken? == true
+      # @station.pop
+      raise 'Bike is broken'
+    end
   end
 
   def dock(velo) # takes an instance of a Bike object
