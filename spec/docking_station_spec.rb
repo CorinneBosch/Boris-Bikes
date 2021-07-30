@@ -20,9 +20,9 @@ describe DockingStation do
   end
 
   it 'test function dock, is working & bikes are docked' do
-    expect(@docking_station.dock_empty?).to eq true
+    expect(@docking_station.station.empty?).to eq true
     @docking_station.dock(@bike)
-    expect(@docking_station.dock_empty?).to eq false
+    expect(@docking_station.station.empty?).to eq false
   end
 
   it 'raise error when docking_station is empty' do
