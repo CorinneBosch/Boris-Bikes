@@ -12,12 +12,13 @@ class DockingStation
   end
 
   def release_bike
-    # raise 'No bikes available to release' if  dock_empty?
+    raise 'No bikes available to release' if dock_empty?
     length = @station.count
-    if (@station[length-1]).working? == true
+    if (@station[length-1]).working? == "fucntioning"
       @station.pop
-    else (@station[length-1]).broken? == true
-      # @station.pop
+    end
+    if (@station[length-1]).broken? == broken
+      @station.pop
       raise 'Bike is broken'
     end
   end

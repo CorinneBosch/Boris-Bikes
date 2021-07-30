@@ -25,10 +25,10 @@ describe DockingStation do
     expect(@docking_station.station.empty?).to eq false
   end
 
-  # it 'raise error when docking_station is empty' do
-  #   @docking_station.station = []
-  #   expect {@docking_station.release_bike}.to raise_error 'No bikes available to release'
-  # end
+  it 'raise error when docking_station is empty' do
+    @docking_station.station = []
+    expect {@docking_station.release_bike}.to raise_error 'No bikes available to release'
+  end
 
   it 'raise error when docking_station is full' do
     20.times { @docking_station.dock Bike.new }
@@ -42,15 +42,12 @@ describe DockingStation do
   end
 
 it 'checks if Bike is broken, does not release when broken & raise error' do 
-  # expect(@docking_station.release_bike.working?)
 
-  # bike1 = Bike.new
-  # add = @docking_station.dock(bike1)
   expect(@bike.working?).to eq true
 
   bike1 = Bike.new('broken')
-  # expect {add.release_bike}.to raise_error 'Bike is broken'
   expect(bike1.broken?).to eq 'broken'
+  expect {@docking_station.}.to raise_error 'Bike is broken'
 end
   # given
   # when
