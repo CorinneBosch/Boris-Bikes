@@ -34,7 +34,12 @@ describe DockingStation do
     20.times { @docking_station.dock Bike.new }
     expect {@docking_station.dock(@bike)}.to raise_error 'Docking station reached full capacety'
   end
-
+  
+  it 'it takes custom capacity given or takes default value of 20' do
+    expect(@docking_station.capacity).to eq 20
+    station2 = DockingStation.new(35)
+    expect(station2.capacity).to eq 35
+  end
   # given
   # when
   # then
