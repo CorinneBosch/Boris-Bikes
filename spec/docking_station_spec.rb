@@ -25,37 +25,39 @@ describe DockingStation do
     expect(@docking_station.station.empty?).to eq false
   end
 
-  # it 'raise error when docking_station is empty' do
-  #   @docking_station.station = []
-  #   expect {@docking_station.release_bike}.to raise_error 'No bikes available to release'
-  # end
+  it 'raise error when docking_station is empty' do
+    @docking_station.station = []
+    expect {@docking_station.release_bike}.to raise_error 'No bikes available to release'
+  end
 
   it 'raise error when docking_station is full' do
     20.times { @docking_station.dock Bike.new }
     expect {@docking_station.dock(@bike)}.to raise_error 'Docking station reached full capacety'
   end
   
-  it 'it takes custom capacity given or takes default value of 20' do
+  it 'takes given custom capacity or set default value 20' do
     expect(@docking_station.capacity).to eq 20
-    station2 = DockingStation.new(35)
-    expect(station2.capacity).to eq 35
+    portobello = DockingStation.new(35)
+    expect(portobello.capacity).to eq 35
+  end
+  
+  it 'test if Bike is broken or working' do
+    expect(@bike.working?).to eq true
+    bike1 = Bike.new('broken')
+    expect(bike1.broken?).to eq 'broken'
+  end
+  
+  it 'does not release Bike when broken & raise error' do 
+    # mayfair = DockingStation.new
+    # mayfair.dock(Bike.new('broken'))
+    @docking_station.station = [Bike.new('broken')]
+    # puts mayfair
+    expect {@docking_station.release_bike}.to raise_error 'Bike is broken, try another one!'
   end
 
-it 'checks if Bike is broken, does not release when broken & raise error' do 
-  # expect(@docking_station.release_bike.working?)
-
-  # bike1 = Bike.new
-  # add = @docking_station.dock(bike1)
-  expect(@bike.working?).to eq true
-
-  bike1 = Bike.new('broken')
-  # expect {add.release_bike}.to raise_error 'Bike is broken'
-  expect(bike1.broken?).to eq 'broken'
-end
-  # given
-  # when
-  # then
-
+  # it 'raise error when dock broken Bike' do 
+  #   expect {@docking_station.dock(Bike.new('broken'))}.to raise_error 'Bike is broken'
+  # end
 
 end
 

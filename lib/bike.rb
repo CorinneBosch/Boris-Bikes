@@ -6,7 +6,7 @@ class Bike
   end
 
   def working?
-    @state == 'functioning' 
+    @state == 'functioning'
   end
 
   def broken?
