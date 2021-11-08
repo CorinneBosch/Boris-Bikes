@@ -9,7 +9,7 @@ Boris Bikes
 
  ```
 
-## Afternoon challenge Boris Bikes
+## Afternoon challenge: Boris Bikes
 First introduction to pair programming, implementing the follwoing practices:
 
 - Working with user stories
