@@ -10,7 +10,7 @@ Boris Bikes
  ```
 
 ## SandCream Delivery Service
-First introduction into pair programming, implementing the follwoing practices:
+First introduction to pair programming, implementing the follwoing practices:
 
 - Working with user stories
 - Domain Modeling
