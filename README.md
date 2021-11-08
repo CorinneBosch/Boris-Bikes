@@ -9,13 +9,19 @@ Boris Bikes
 
  ```
 
-## SandCream Delivery Service
+## Afternoon challenge Boris Bikes
 First introduction to pair programming, implementing the follwoing practices:
 
 - Working with user stories
 - Domain Modeling
 - Feature and Unit testing
 - Isolating test with doubles and mocks
+
+Goals:
+- Test-drive a simple program using objects and methods
+- Pair using the driver-navigator style
+- Follow an effective debugging process
+- Describe some basic OO principles like encapsulation, SRP
 
 ## Setup
 
