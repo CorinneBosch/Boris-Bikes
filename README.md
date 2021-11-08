@@ -27,7 +27,7 @@ Goals:
 
 1. **Fork** this [boris-bike repository](https://github.com/CorinneBosch/boris-bikes/) 
 2. Then clone **your** fork to your computer.
-3. Ensure you have `Ruby` and `rspec` installed. Check ruby version with `ruby-v`
+3. Ensure you have `Ruby` and `rspec` installed. Check ruby version with `ruby -v`
 
 ## Interact with the program
 
