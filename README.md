@@ -29,7 +29,7 @@ Goals:
 2. Then clone **your** fork to your computer.
 3. Ensure you have `Ruby` and `rspec` installed. Check ruby version with `ruby -v`
 
-## Interact with the program
+## Interact with the programme
 
 You can frature test and run the boris-bike program in any `code editor` or `IRB`. 
 
