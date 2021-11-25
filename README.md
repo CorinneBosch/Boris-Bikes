@@ -7,7 +7,10 @@ Boris Bikes
  ---- (*)/ (*)  (*)/ (*)  (*)/ (*)  (*)/ (*)  (*)/ (*)
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- ```
+```
+______
+ 
+[Set up](#Setup) | [Interact](#Interact) | [Run Tests](#Tests) | [User Stories](#User-Stories) 
 
 ## Afternoon challenge: Boris Bikes
 First introduction to pair programming, implementing the follwoing practices:
@@ -23,19 +26,19 @@ Goals:
 - Follow an effective debugging process
 - Describe some basic OO principles like encapsulation, SRP
 
-## Setup
+## <a name="Setup">Set up</a>
 
 1. **Fork** this [boris-bike repository](https://github.com/CorinneBosch/boris-bikes/) 
 2. Then clone **your** fork to your computer.
 3. Ensure you have `Ruby` and `rspec` installed. Check ruby version with `ruby -v`
 
-## Interact with the programme
+## <a name="Interact">Interact with the programme</a>
 
 You can frature test and run the boris-bike program in any `code editor` or `IRB`. 
 
-## Run test 
+## <a name="Tests">Run tests</a>
 
-To test all units and features at once in your terminal.
+To test all units and features at once in your terminal.\
 Print out the format documentation with the -fd shortcut.
 ```
 $ rspec
@@ -48,7 +51,7 @@ $ rspec spec/bike_spec.rb -fd
 $ rspec spec/docking_station_spec.rb -fd
 ```
 
-## The boris-bike challenge is built upon the following user stories:
+## <a name="User-Stories">The boris-bike challenge is built upon the following user stories:</a>
 
 ```
 As a person,
